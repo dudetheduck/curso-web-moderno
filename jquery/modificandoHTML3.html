@@ -12,6 +12,21 @@
     <h1>Modificando HTML #03</h1>
     <div id='conteudo'></div>
 
+    <!-- <table>
+        <tr>
+            <th>Nome</th>
+            <th>Nota</th>
+        </tr>
+        <tr>
+            <td>Ana</td>
+            <td>9.1</td>
+        </tr>
+        <tr>
+            <td>Bianca</td>
+            <td>8.4</td>
+        </tr>
+    </table> -->
+
     <script>
         const pessoas = [
             { nome: 'Ana', nota: 9.1 },
@@ -19,7 +34,29 @@
             { nome: 'Carlos', nota: 7.6 },
             { nome: 'Julia', nota: 9.7 }
         ]
+
+        // Executa a função somente dps que o site carregar
+        /*
+        $(document).ready(function () {
+
+            const linhas = pessoas.map(p => {
+                const tdNome = $('<td>').html(p.nome)
+                const tdNota = $('<td>').html(p.nota)
+                // return $('<tr>').append(tdNome).append(tdNota)
+                // return $('<tr>').append([tdNome, tdNota])
+                return $('<tr>').append(tdNome, tdNota)
+            })
+
+            const tabela = $('<table>').append(linhas)
+                .css('border', '5px solid')
+            $('#conteudo').append(tabela)
+        })
+        */
+
+        $('#conteudo').append('<table><tr> <td>Nome</td> <td>Nota</td> </tr></table>')
         
-        // ...
+        $.each(pessoas, function(i, v) {
+            $('#conteudo').append(`<tr> <td>${v.nome}</td> <td>${v.nota}</td> </tr>`)
+        })
     </script>
 </body>
