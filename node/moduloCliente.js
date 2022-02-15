@@ -9,4 +9,3 @@ console.log(moduloA)
 console.log(moduloB.bomDia)
 console.log(moduloB.boaNoite())
 console.log(moduloB)
-
